@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <math.h>
 #include <vector>
 using namespace std;
@@ -8,6 +9,7 @@ int main()
     double r = 0;
     double pi = 3.14;
     double circleField = 0;
+    int increment = 0;
     vector<vector<double>> table;
     vector<double> fieldCell;
 
@@ -16,11 +18,11 @@ int main()
 
     circleField = pi * pow(r, 2);
 
-    cout << circleField;
+    // cout << circleField;
 
     fieldCell.push_back(circleField);
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 1; j++)
         {
@@ -30,10 +32,15 @@ int main()
 
     for (int i = 0; i < table.size(); i++)
     {
-        for (int j = 0; j < 1; j++)
+        for (int k = 0; k < 10; k++)
         {
-            cout << table[i][j];
+            for (int j = 0; j < 1; j++)
+            {
+                cout << setw(7) << table[i][j] + increment << " ";
+                increment +=3;
+            }
         }
+
         cout << endl;
     }
 
